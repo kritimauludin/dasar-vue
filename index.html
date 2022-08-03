@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<head>
+    <title>Tutor Vue Js</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.7.8/dist/vue.js"></script>
+    <style>
+        .canvas{
+            width: 300px;
+            height: 300px;
+            margin-top: 20px;
+            background-color: aquamarine;
+        }
+        .one{
+            color: blue;
+        }
+        .two{
+            text-decoration: line-through;
+        }
+    </style>
+</head>
+<body>
+    <div id="app">
+        <h1>{{ title }}</h1>
+        <p>{{ greet() }}</p>
+        <p>My Name Is {{ name }}</p>
+        <input type="text" v-model="name"> <br>
+        <!-- <input type="text" @keyup="updateName"> <br> -->
+        <a v-bind:href="url">Arahin Media Kreasi</a><br>
+        <div v-bind:class="text">Belajar vue js dibayarin prakerja</div> <br>
+
+        <!-- looping 1 -->
+        <ul>
+            <li v-for="course in courses">{{ course }}</li>
+        </ul>
+        <!-- looping 2 -->
+        <div v-for="(package, index) in packages">
+            <p>{{ index }}. {{ package.coursePackage }}</p>
+            <p>Price : {{ package.price }}</p>
+            <p>Description : {{ package.description }}</p>
+        </div>
+        <button @click="logEvent">Log event Info</button>
+
+        <!-- show cordinate mouse -->
+        <div class="canvas" @mousemove="logCoordinate">
+            {{ coordinate.x }}, {{ coordinate.y }}
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
