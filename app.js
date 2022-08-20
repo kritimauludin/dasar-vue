@@ -3,7 +3,7 @@ new Vue({
     data: {
         title: 'Learn vue js',
         codeName : 'RZL',
-        name: 'Rizil',
+        name: 'Riza',
         coordinate: {
             x: 0,
             y: 0
